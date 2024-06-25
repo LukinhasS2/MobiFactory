@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MobiFactory</string>
+    <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="logoTipo">LogoTipo</string>
+    <string name="username">Username</string>
+
+    <string name="error_empty_username">Username is required</string>
+    <string name="error_empty_password">Password is required</string>
+    <string name="error_login_failed">Invalid username or password</string>
+    <string name="bem_vindo_ao_painel_principal">Bem-vindo ao Painel Principal</string>
+    <string name="pedidos_em_producao">Pedidos em Produção</string>
+    <string name="pedidos_atrasados">Pedidos Atrasados</string>
+    <string name="nivel_de_estoque">Nível de Estoque</string>
+    <string name="comunicacao">Comunicação</string>
+    <string name="estoque">Estoque</string>
+    <string name="producao">Produção</string>
+    <string name="_0">0</string>
+    <string name="_00">00</string>
+    <string name="_000">000</string>
+</resources>
