@@ -41,5 +41,15 @@
             </intent-filter>
         </activity>
 
+        <!-- Adicionando a definição da ProductionTrackingActivity -->
+        <activity
+            android:name=".ProductionTrackingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

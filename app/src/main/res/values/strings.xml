@@ -9,6 +9,7 @@
     <string name="error_empty_username">Username is required</string>
     <string name="error_empty_password">Password is required</string>
     <string name="error_login_failed">Invalid username or password</string>
+
     <string name="bem_vindo_ao_painel_principal">Bem-vindo ao Painel Principal</string>
     <string name="pedidos_em_producao">Pedidos em Produção</string>
     <string name="pedidos_atrasados">Pedidos Atrasados</string>
@@ -19,4 +20,17 @@
     <string name="_0">0</string>
     <string name="_00">00</string>
     <string name="_000">000</string>
+
+    <string name="acompanhamento_da_producao">Acompanhamento da Produção</string>
+    <string name="id">ID</string>
+    <string name="cliente">Cliente</string>
+    <string name="data_entrega">Data de Entrega</string>
+    <string name="status">Status</string>
+    <string name="detalhes">Detalhes</string>
+    <string name="acompanhamento_da_producao1">Acompanhamento da Produção</string>
+    <string name="detalhes1">Detalhes</string>
+    <string name="cliente1">Cliente</string>
+    <string name="data_de_entrega">Data de Entrega</string>
+    <string name="id1">ID</string>
+    <string name="status1">Status</string>
 </resources>

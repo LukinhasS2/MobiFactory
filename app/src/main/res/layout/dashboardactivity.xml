@@ -129,4 +129,38 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Botões de acesso rápido -->
+    <LinearLayout
+        android:id="@+id/quickAccessButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardNivelEstoque">
+
+        <Button
+            android:id="@+id/buttonProducao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/producao" />
+
+        <Button
+            android:id="@+id/buttonEstoque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/estoque" />
+
+        <Button
+            android:id="@+id/buttonComunicacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/comunicacao" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
