@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MobiFactory"
         tools:targetApi="31">
 
-        <!-- Adicionando a definição da LoginActivity -->
+        <!-- Activity principal -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Definindo a MainActivity -->
+        <!-- Activity secundária -->
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Adicionando a definição da DashboardActivity -->
+        <!-- DashboardActivity -->
         <activity
             android:name=".DashboardActivity"
             android:exported="true">
@@ -41,9 +41,19 @@
             </intent-filter>
         </activity>
 
-        <!-- Adicionando a definição da ProductionTrackingActivity -->
+        <!-- ProductionTrackingActivity -->
         <activity
             android:name=".ProductionTrackingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- AddPedidoActivity -->
+        <activity
+            android:name=".AddPedidoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

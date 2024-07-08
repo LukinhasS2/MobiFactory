@@ -1,5 +1,6 @@
 package com.pucpr.mobifactory;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductionTrackingActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewPedidos;
     private PedidoAdapter pedidoAdapter;
-    private List<Pedido> listaPedidos;
+    private DatabaseHelper dbHelper;
+    private Button buttonNovoPedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,26 +29,23 @@ public class ProductionTrackingActivity extends AppCompatActivity {
         recyclerViewPedidos = findViewById(R.id.recyclerViewPedidos);
         recyclerViewPedidos.setLayoutManager(new LinearLayoutManager(this));
 
-        // Simular lista de pedidos
-        listaPedidos = new ArrayList<>();
-        listaPedidos.add(new Pedido("001", "Cliente A", "01/07/2024", "Corte"));
-        listaPedidos.add(new Pedido("002", "Cliente B", "05/07/2024", "Montagem"));
-        listaPedidos.add(new Pedido("003", "Cliente C", "10/07/2024", "Acabamento"));
+        dbHelper = new DatabaseHelper(this);
+        List<Pedido> listaPedidos = dbHelper.getAllPedidos();
 
         pedidoAdapter = new PedidoAdapter(listaPedidos);
         recyclerViewPedidos.setAdapter(pedidoAdapter);
-    }
 
-    // Classe Pedido
-    public class Pedido {
-        String id, cliente, dataEntrega, status;
-
-        public Pedido(String id, String cliente, String dataEntrega, String status) {
-            this.id = id;
-            this.cliente = cliente;
-            this.dataEntrega = dataEntrega;
-            this.status = status;
-        }
+        buttonNovoPedido = findViewById(R.id.buttonNovoPedido);
+        buttonNovoPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Ação ao clicar no botão "Novo Pedido"
+                Toast.makeText(ProductionTrackingActivity.this, "Clicou em Novo Pedido", Toast.LENGTH_SHORT).show();
+                // Exemplo de navegação para uma nova activity
+                Intent intent = new Intent(ProductionTrackingActivity.this, AddPedidoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Adapter para RecyclerView
@@ -68,15 +66,15 @@ public class ProductionTrackingActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(PedidoViewHolder holder, int position) {
             Pedido pedido = pedidos.get(position);
-            holder.textViewPedidoId.setText(pedido.id);
-            holder.textViewCliente.setText(pedido.cliente);
-            holder.textViewDataEntrega.setText(pedido.dataEntrega);
-            holder.textViewStatus.setText(pedido.status);
+            holder.textViewPedidoId.setText(pedido.getId());
+            holder.textViewCliente.setText(pedido.getCliente());
+            holder.textViewDataEntrega.setText(pedido.getDataEntrega());
+            holder.textViewStatus.setText(pedido.getStatus());
 
             holder.buttonDetalhes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(ProductionTrackingActivity.this, "Detalhes do pedido " + pedido.id, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductionTrackingActivity.this, "Detalhes do pedido " + pedido.getId(), Toast.LENGTH_SHORT).show();
                     // Implementar navegação para a tela de detalhes do pedido, se necessário
                 }
             });

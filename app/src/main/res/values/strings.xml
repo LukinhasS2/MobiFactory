@@ -33,4 +33,6 @@
     <string name="data_de_entrega">Data de Entrega</string>
     <string name="id1">ID</string>
     <string name="status1">Status</string>
+    <string name="adicionar_pedido">Adicionar Pedido</string>
+    <string name="novo_pedido">Novo Pedido</string>
 </resources>
